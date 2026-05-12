@@ -14,6 +14,16 @@ body {
   padding-top: 50px;
 }
 
+#canvas1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Cor do fundo */
+    z-index: -1; /* Fica atrás do conteúdo */
+}
+
 #container {
   width: 100%;
   max-width: 450px; /* Limita a largura para não esticar demais em telas grandes */
