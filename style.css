@@ -1,50 +1,75 @@
 * {
- font-family: sans-serif;
- margin: 0;
- box-sizing: border-box; 
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
 }
 
-body{
- background-color: black;
- color: white;
- height: 100vh;
- display: flex;
+body {
+  background-color: black;
+  color: white;
+  /* Centraliza o conteúdo na tela, mas mantém o texto à esquerda */
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 
 #container {
- width: 100%;
- display: flex;
- flex-direction: column;
- align-items: flex-start;
+  width: 100%;
+  max-width: 450px; /* Limita a largura para não esticar demais em telas grandes */
+  padding: 0 24px;
 }
 
-ul {
- display: flex;
- list-style: none;
- padding: 24px 0;
- flex-direction: column;
- align-items: flex-start;
-}
-
-ul li {
- border: 1px solid white;
- border-radius: 7px;
- padding: 5px;
- margin: 15px ;
-}
-
-ul li a {
- color: white;
- text-decoration: none;
+/* Estilo do Cabeçalho */
+#profile {
+  text-align: center; /* Foto e nome centralizados no topo */
+  margin-bottom: 20px;
 }
 
 #profile img {
- padding: 4px;
- margin: 10px;
- width: 150px;
- height: 150px;
- border-radius: 50%;  
- background-color: #ffffff;
- border: 2px solid #ffffff;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;  
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+#profile h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+#profile p {
+  font-size: 16px;
+  color: #a0a0a0;
+}
+
+/* Estilo da Lista de Botões */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaço entre os botões */
+  margin-top: 24px;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s; /* Suaviza a troca de cor */
+}
+
+/* Efeito de interatividade (Hover) - Agora faz sentido! */
+ul li a:hover {
+  background-color: white;
+  color: black;
 }
