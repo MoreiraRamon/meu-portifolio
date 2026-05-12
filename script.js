@@ -66,3 +66,11 @@ function animate() {
 
 init();
 animate();
+
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    // Opcional: Reiniciar partículas para redistribuir no novo tamanho
+    particlesArray = [];
+    init();
+});

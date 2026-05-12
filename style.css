@@ -1,17 +1,19 @@
 * {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; 
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }
 
 body {
-  background-color: black;
-  color: white;
-  /* Centraliza o conteúdo na tela, mas mantém o texto à esquerda */
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
+/* Garante que o corpo ocupe a altura dinâmica da tela do celular */
+    min-height: 100dvh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    padding: 40px 20px;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
 #canvas1 {
@@ -25,61 +27,68 @@ body {
 }
 
 #container {
-  width: 100%;
-  max-width: 450px; /* Limita a largura para não esticar demais em telas grandes */
-  padding: 0 24px;
+    width: 100%;
+    max-width: 400px; /* Largura padrão de Linktree */
+    z-index: 1; /* Mantém o conteúdo acima do canvas */
 }
 
 /* Estilo do Cabeçalho */
 #profile {
-  text-align: center; /* Foto e nome centralizados no topo */
-  margin-bottom: 20px;
+    text-align: center; /* Foto e nome centralizados no topo */
+    margin-bottom: 20px;
 }
 
 #profile img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;  
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;  
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
 }
 
 #profile h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
 #profile p {
-  font-size: 16px;
-  color: #a0a0a0;
+    font-size: 16px;
+    color: #a0a0a0;
 }
 
 /* Estilo da Lista de Botões */
 ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px; /* Espaço entre os botões */
-  margin-top: 24px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre os botões */
+    margin-top: 24px;
 }
 
 ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  border: 1px solid white;
-  border-radius: 8px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s; /* Suaviza a troca de cor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s; /* Suaviza a troca de cor */
+    min-height: 55px; /* Altura ideal para o toque do polegar (Touch Target) */
+    width: 100%;
+    transition: transform 0.2s; /* Feedback visual ao tocar */
 }
 
 /* Efeito de interatividade (Hover) - Agora faz sentido! */
 ul li a:hover {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
+}
+
+ul li a:active {
+  transform: scale(0.98); /* Efeito de "clique" no celular */
 }
